@@ -1,0 +1,11 @@
+Manifest-Version: 1.0
+Implementation-Title: service-proxy-war
+Implementation-Version: 4.0.18
+Implementation-Vendor-Id: org.membrane-soa.service-proxy
+Built-By: Tobias
+Build-Jdk: 1.7.0_55
+Specification-Title: service-proxy-war
+Created-By: Apache Maven 3.1.1
+Specification-Version: 4.0.18
+Archiver-Version: Plexus Archiver
+

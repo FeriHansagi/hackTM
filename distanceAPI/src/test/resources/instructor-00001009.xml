@@ -1,0 +1,98 @@
+<ns2:instructor xmlns:ns2="http://api.haufe-akademie.de/instructor/v1/">
+	<person>
+		<id>00001009</id>
+		<firstname>KLAUS</firstname>
+		<lastname>HOCKK</lastname>
+		<title>Dr.</title>
+		<salutation>Herr</salutation>
+	</person>
+	<email type="account">HOCK@TESTMAIL.COM</email>
+	<email type="other">HOCK@TESTMAIL.COM</email>
+	<shortProfile>
+		This is a new shortVita, created 18.02.2015 12:50 CET
+	</shortProfile>
+	<validity>
+		<startDate>1990-01-01</startDate>
+	</validity>
+	<roles>
+		<role>trainer</role>
+	</roles>
+	<functions>
+		<function>
+			<name>instructor</name>
+			<state>active</state>
+		</function>
+		<function>
+			<name>chair</name>
+			<state>active</state>
+		</function>
+		<function>
+			<name>author_lection</name>
+			<state>active</state>
+		</function>
+	</functions>
+	<subjectsOfInterest>
+		<subjectOfInterestGroup>
+			<title>Arbeitsrecht</title>
+			<subjectOfInterestGroup>
+				<title>Arbeitsrecht</title>
+				<subjectOfInterest>
+					<title>Individuelles Arbeitsrecht</title>
+				</subjectOfInterest>
+				<subjectOfInterest>
+					<title>
+						Kollektives Arbeitsrecht (Betriebsverfassungsrecht)
+					</title>
+				</subjectOfInterest>
+				<subjectOfInterest>
+					<title>Umgang mit kranken Mitarbeitern</title>
+				</subjectOfInterest>
+				<subjectOfInterest>
+					<title>Umgang mit Low-Performern</title>
+				</subjectOfInterest>
+			</subjectOfInterestGroup>
+			<subjectOfInterestGroup>
+				<title>Vergütung und Arbeitszeit</title>
+				<subjectOfInterest>
+					<title>ATZ</title>
+				</subjectOfInterest>
+			</subjectOfInterestGroup>
+			<subjectOfInterestGroup>
+				<title>TVöD</title>
+				<subjectOfInterest>
+					<title>Allg. Tarif- und Arbeitsrecht</title>
+				</subjectOfInterest>
+				<subjectOfInterest>
+					<title>Krankenhaus</title>
+				</subjectOfInterest>
+				<subjectOfInterest>
+					<title>Entgeltsystem TVöD</title>
+				</subjectOfInterest>
+				<subjectOfInterest>
+					<title>ATZ</title>
+				</subjectOfInterest>
+			</subjectOfInterestGroup>
+		</subjectOfInterestGroup>
+		<subjectOfInterestGroup>
+			<title>Entgeltabrechnung</title>
+			<subjectOfInterest>
+				<title>Altersteilzeit</title>
+			</subjectOfInterest>
+			<subjectOfInterest>
+				<title>Lohnpfändungen</title>
+			</subjectOfInterest>
+			<subjectOfInterest>
+				<title>Verbraucherinsolvenz</title>
+			</subjectOfInterest>
+		</subjectOfInterestGroup>
+	</subjectsOfInterest>
+	<profilePicture />
+	<vitaList />
+	<socialNetworkProfiles />
+	<links>
+		<link rel="self" type="application/xml"
+			href="https://217.31.84.148:8081/productinfo/v1/instructors/00001009" />
+		<link rel="relatedTopics" type="application/xml"
+			href="https://217.31.84.148:8081/productinfo/v1/productspecs/00001009" />
+	</links>
+</ns2:instructor>

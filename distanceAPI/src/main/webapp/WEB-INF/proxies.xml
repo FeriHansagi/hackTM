@@ -1,0 +1,66 @@
+<spring:beans xmlns="http://membrane-soa.org/proxies/1/"
+              xmlns:spring="http://www.springframework.org/schema/beans"
+              xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+              xmlns:web="http://membrane-soa.org/war/1/"
+              xmlns:context="http://www.springframework.org/schema/context"
+              xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+					    http://membrane-soa.org/proxies/1/ http://membrane-soa.org/schemas/proxies-1.xsd
+					    http://membrane-soa.org/war/1/ http://membrane-soa.org/schemas/war-1.xsd
+					    http://camel.apache.org/schema/spring http://activemq.apache.org/camel/schema/spring/camel-spring.xsd">
+
+
+    <limitedMemoryExchangeStore id="es" maxSize="10000000"/>
+
+    <router hotDeploy="false" exchangeStore="es">
+        <web:servletTransport>
+            <reverseProxying/>
+            <ruleMatching/>
+            <exchangeStore/>
+            <dispatching/>
+            <!-- 100 MByte -->
+            <limit maxBodyLength="100000000"/>
+            <spring:bean class="com.predic8.membrane.core.interceptor.flow.ResponseInterceptor">
+                <spring:property name="interceptors">
+                    <spring:list>
+                        <spring:bean class="com.predic8.membrane.core.interceptor.HeaderFilterInterceptor">
+                            <spring:property name="rules">
+                                <spring:list>
+                                    <spring:bean
+                                            class="com.predic8.membrane.core.interceptor.HeaderFilterInterceptor.Exclude">
+                                        <!-- add more header names to be excluded from the response here, separated by | -->
+                                        <spring:property name="pattern"
+                                                         value="workplace|checkoutId|authorInternalSapId|type|X-AUTHORINTERNALSAPID|Authorization"/>
+                                    </spring:bean>
+                                </spring:list>
+                            </spring:property>
+                        </spring:bean>
+                    </spring:list>
+                </spring:property>
+            </spring:bean>
+            <userFeature/>
+            <httpClient/>
+        </web:servletTransport>
+
+        <serviceProxy name="distance GET" method="GET">
+            <path isRegExp="true">*</path>
+            <request>
+            </request>
+            <response>
+                <log/>
+                <log/>
+            </response>
+            <target host="localhost" port="4567"/>
+        </serviceProxy>
+
+        <serviceProxy name="Console">
+            <path>/console</path>
+            <basicAuthentication>
+                <user name="admin" password="admin"/>
+            </basicAuthentication>
+            <adminConsole/>
+        </serviceProxy>
+
+    </router>
+
+    <spring:import resource="classpath:/META-INF/spring/camel-context-instructors.xml"/>
+</spring:beans>
